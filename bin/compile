@@ -166,7 +166,7 @@ if [[ -d "$CACHE_DIR/.heroku/src" ]]; then
   cp -R "$CACHE_DIR/.heroku/src" .heroku/ &> /dev/null || true
 fi
 
-# The pre_compile hook. Customers rely on this. Don't remove it.
+# The hook. Customers rely on this. Don't remove it.
 # This part of the code is used to allow users to customize their build experience
 # without forking the buildpack by providing a `bin/pre_compile` script, which gets
 # run inline with the buildpack automatically.
@@ -272,6 +272,7 @@ sub_env "$BIN_DIR/steps/geo-libs"
 # This is part of the Geo support.
 # shellcheck source=bin/steps/gdal
 source "$BIN_DIR/steps/gdal"
+
 
 # pip install
 # -----------
